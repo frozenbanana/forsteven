@@ -79,7 +79,6 @@ const Footer = () => {
             font-family: "Dancing Script", sans-serif;
             font-weight: 400;
             line-height: 1.8;
-            letter-spacing: 2px;
           }
 
           .nav-container {
@@ -91,8 +90,22 @@ const Footer = () => {
             display: flex;
             list-style: none;
             flex-direction: row;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
+            width: 40rem;
+          }
+
+          .nav-container ul li a:link,
+          .nav-container ul li a:visited {
+            font-weight: 500;
+            padding: 6px 0;
+            border-bottom: none;
+          }
+
+          .nav-container ul li a:link:hover,
+          .nav-container ul li a:visited:hover {
+            border-bottom: 1px solid black;
+            font-weight: bold;
           }
 
           .copyright-container {
@@ -115,6 +128,8 @@ const Footer = () => {
 
           .contact-container ul {
             list-style: none;
+            margin: 0 auto;
+            padding-left: 0;
           }
 
           .contact-container li {
@@ -122,7 +137,7 @@ const Footer = () => {
           }
 
           .contact-container li:not(:last-child) {
-            margin-right: 1.2rem;
+            margin-right: 5rem;
           }
 
           .contact-container a:link,
@@ -131,7 +146,7 @@ const Footer = () => {
             height: 5rem;
             border-radius: 50%;
             box-shadow: 0 1.5rem 3rem rgba(#000, 0.5);
-            margin-right: 5rem;
+            // margin-right: 5rem;
             transition: all 0.4s;
           }
 

@@ -2,12 +2,10 @@
 import Link from "next/link";
 
 const ProjectCard = ({title, body}) => {
-//   console.log(coverImg);
-  console.log('HELLO', title, body);
+    //   console.log(coverImg);
     if (!title) {
         return "IT IS NOT WORKING!";
     }
-  console.log('asd');
   return (
     <div>
       <div className="card-container">

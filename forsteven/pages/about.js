@@ -1,29 +1,49 @@
-import Head from 'next/head'
-import Layout from '../components/layout';
+import Head from "next/head";
+import Layout from "../components/layout";
 
 export default function About() {
   return (
-      <Layout>
-        
-        <div className="container">
-            <div className="hero-item">
-                <h1>I am a great computer man.</h1>
-                <p>But I am also just a person.</p>
-            </div>
-            <div>
-                <img className="hero-item hero-image" src="profile.JPG"/>
-            </div>
+    <Layout>
+      <div className="about-container">
+        <div className="hero-item shadowed">
+          <div>
+            <h1 className="hero-item__title">I am a great computer man.</h1>
+            <p className="hero-item__subtitle">But I am also just a person.</p>
+          </div>
         </div>
+        <div>
+          <img className="hero-item hero-image shadowed" src="profile.JPG" />
+        </div>
+      </div>
+      <div className="contact-container shadowed">
+        <p>
+          Have any projects in mind? Say hello at
+          <br />
+        </p>
+        <p>
+          <b>steven@email.com</b>
+        </p>
+      </div>
 
-        <style jsx>{`
-        .container {
+      <style jsx>{`
+        .about-container {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             width: 100%:
             justify-content: center;
+            margin-bottom: 0;
+            margin-top: 5rem;
         }
 
-        .hero-image {
+        .contact-container {
+            display: flex;
+            width: 100%:
+            justify-content: center;
+            margin: 5rem;
+        }
+
+        .hero-image {   
             width: 25rem;
             height: 25rem;
         }
@@ -32,88 +52,31 @@ export default function About() {
             margin: auto 6rem;
         }
 
-        .title a {
-        color: #0070f3;
-        text-decoration: none;
-        }
+        .hero-item__title {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid black; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: 1px; /* Adjust as needed */
+            animation: 
+              typing 3.5s steps(40, end),
+              blink-caret .75s step-end infinite;
+          }
 
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-        text-decoration: underline;
-        }
-
-        .title {
-        margin: 0;
-        line-height: 1.15;
-        font-size: 4rem;
-        }
-
-        .title,
-        .description {
-        text-align: center;
-        }
-
-        .description {
-        line-height: 1.5;
-        font-size: 1.5rem;
-        }
-
-        code {
-        background: #fafafa;
-        border-radius: 5px;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        max-width: 800px;
-        margin-top: 3rem;
-        }
-
-        .card {
-        margin: 1rem;
-        flex-basis: 45%;
-        padding: 1.5rem;
-        text-align: left;
-        color: inherit;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
-        }
-
-        .card h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-        }
-
-        .card p {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1.5;
-        }
-
-        .logo {
-        height: 1em;
-        }
-
-        }
+          .hero-item__subtitle {
+              opacity: .8;
+          }
+          
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+          }
+          
+          @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black; }
+          }
         `}</style>
-      </Layout>
-  )
+    </Layout>
+  );
 }

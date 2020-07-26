@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Logo from './logo';
 
 const Navbar = () => {
   return (
     <div>
-      <img src="https://via.placeholder.com/50" width="35rem" height="35rem" />
+      <Logo />
       <ul>
         <li>
           <Link href="/about">
@@ -29,12 +30,16 @@ const Navbar = () => {
       <style jsx>{`
         div {
           display: flex;
+          width: 90%;
+          margin: 8px auto;
+          margin-bottom: 1.6rem;
           justify-content: space-between;
           align-items: center;
+          position: relative;
         }
 
         img {
-          margin: auto 1rem;
+          width: 10rem;
         }
 
         ul {
@@ -50,12 +55,23 @@ const Navbar = () => {
           margin: 0;
           font-size: 1.6rem;
         }
-        ul li {
+
+        ul li:not(:last-child) {
           margin-right: 5rem;
         }
-        ul li a {
+
+        ul li a:link,
+        ul li a:visited {
           color: #000;
           text-decoration: none;
+          padding: 5px 0;
+          transition: all .2s;
+        }
+
+        ul li a:link:hover,
+        ul li a:visited:hover {
+          font-weight: 600;
+          border-bottom: 1.2px solid #000;
         }
       `}</style>
     </div>
