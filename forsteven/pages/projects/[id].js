@@ -2,13 +2,12 @@ import { useRouter } from 'next/router'
 import Layout from '../../components/layout';
 import fetch from 'isomorphic-fetch';
 
-const Post = ({post}) => {
-  console.log(post);
+const Project = ({project}) => {
   return (
     <Layout>
         <div className="content-container shadowed-static">
-            <h1>{post.title}</h1>
-            <p>{post.body}</p>
+            <h1>{project.title}</h1>
+            <p>{project.body}</p>
         </div>
     </Layout>
   );
@@ -18,8 +17,8 @@ const Post = ({post}) => {
 export async function getServerSideProps(context) {
   const { id } = context.query;
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  const post = await res.json();
-  return { props: { post} }
+  const project = await res.json();
+  return { props: { project} }
 }
 
 // export const getStaticPaths = async () => {
@@ -36,4 +35,4 @@ export async function getServerSideProps(context) {
 // }
 
   
-export default Post
+export default Project

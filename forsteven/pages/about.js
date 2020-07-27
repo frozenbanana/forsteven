@@ -5,24 +5,23 @@ export default function About() {
   return (
     <Layout>
       <div className="about-container">
-        <div className="hero-item shadowed">
+        <div className="hero-item shadowed-static">
           <div>
             <h1 className="hero-item__title">I am a great computer man.</h1>
             <p className="hero-item__subtitle">But I am also just a person.</p>
           </div>
         </div>
         <div>
-          <img className="hero-item hero-image shadowed" src="profile.JPG" />
+          <img className="hero-item hero-image shadowed-static" src="profile.JPG" />
         </div>
       </div>
-      <div className="contact-container shadowed">
+      <div className="contact-container shadowed-static">
         <p>
           Have any projects in mind? Say hello at
-          <br />
         </p>
-        <p>
-          <b>steven@email.com</b>
-        </p>
+        <h3>
+          <strong>steven@email.com</strong>
+        </h3>
       </div>
 
       <style jsx>{`
@@ -40,7 +39,9 @@ export default function About() {
             display: flex;
             width: 100%:
             justify-content: center;
+            align-items: center;
             margin: 5rem;
+            flex-direction: column;
         }
 
         .hero-image {   

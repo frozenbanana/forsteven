@@ -1,27 +1,23 @@
-import Head from "next/head";
-import Layout from "../components/layout";
-import ProjectCard from "../components/projectCard";
+import Link from "next/link";
+import Layout from "../../components/layout";
+import Card from "../../components/card";
 
 export default function Projects({ projects }) {
-  console.log("This is the projects!");
   projects = projects.slice(0, 5);
-  console.log(projects);
-
   return (
     <Layout>
-      <div className="container">
-        <div className="projects">
+        <div>
+          <h1 className="shadowed-static">My Projects</h1>
+        </div>
+        <div className="frame-container">
           {projects.map((p) => {
             console.log("trying to map ", p);
-            return <ProjectCard {...p} key={p.title} />;
+            return (
+              <Link href={`/projects/[id]`} as={`/projects/${p.id}`} key={p.id}>
+                <Card {...p} color={[80, 130, 160, 0.4]} key={p.title} />
+              </Link> );
           })}
         </div>
-        <style jsx>{`
-          .projects {
-            display: flex;
-          }
-        `}</style>
-      </div>
     </Layout>
   );
 }

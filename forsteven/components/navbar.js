@@ -6,24 +6,19 @@ const Navbar = () => {
     <div>
       <Logo />
       <ul>
-        <li>
+        <li className="shadowed-light">
           <Link href="/about">
-            <a>About</a>
+            <a><b>About</b></a>
           </Link>
         </li>
-        <li>
+        <li className="shadowed-light">
           <Link href="/blog">
-            <a>Blog</a>
+            <a><b>Blog</b></a>
           </Link>
         </li>
-        <li>
+        <li className="shadowed-light">
           <Link href="/projects">
-            <a>Projects</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact">
-            <a>Contact</a>
+            <a><b>Projects</b></a>
           </Link>
         </li>
       </ul>
@@ -56,22 +51,8 @@ const Navbar = () => {
           font-size: 1.6rem;
         }
 
-        ul li:not(:last-child) {
-          margin-right: 5rem;
-        }
-
-        ul li a:link,
-        ul li a:visited {
-          color: #000;
-          text-decoration: none;
-          padding: 5px 0;
-          transition: all .2s;
-        }
-
-        ul li a:link:hover,
-        ul li a:visited:hover {
-          font-weight: 600;
-          border-bottom: 1.2px solid #000;
+        ul li {
+          margin-left: 1rem;
         }
       `}</style>
     </div>
