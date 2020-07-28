@@ -13,8 +13,8 @@ export default function Projects({ projects }) {
           {projects.map((p) => {
             console.log("trying to map ", p);
             return (
-              <Link href={`/projects/[id]`} as={`/projects/${p.id}`} key={p.id}>
-                <Card {...p} color={[80, 130, 160, 0.4]} key={p.title} />
+              <Link href={`/projects/[slug]`} as={`/projects/${p.slug}`} key={p.id}>
+                <a><Card {...p} color={[80, 130, 160, 0.4]} key={p.title} /></a>
               </Link> );
           })}
         </div>
@@ -25,7 +25,8 @@ export default function Projects({ projects }) {
 // This function gets called at build time
 export async function getStaticProps() {
   // Call an external API endpoint to get posts
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  console.log(`${process.env.API_URL}/posts`);
+  const res = await fetch(`${process.env.API_URL}/posts`);
   const projects = await res.json();
   console.log("we got posts", projects);
   return {

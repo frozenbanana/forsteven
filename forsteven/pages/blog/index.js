@@ -12,8 +12,10 @@ const Blog = ({ posts }) => {
         <div className="frame-container">
           {posts.map((p) => {
             return (
-            <Link href={`/blog/[id]`} as={`/blog/${p.id}`} key={p.id}>
-              <Card {...p} color={[80, 230, 80, 0.4]} key={p.title}/>
+            <Link href={`/blog/[slug]`} as={`/blog/${p.slug}`} key={p.id}>
+              <a>
+                <Card {...p} color={[80, 230, 80, 0.4]} key={p.title}/>
+              </a>
             </Link> );
           })}
         </div>
@@ -24,7 +26,7 @@ const Blog = ({ posts }) => {
 // This function gets called at build time
 export async function getStaticProps() {
   // Call an external API endpoint to get posts
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch(`${process.env.API_URL}/posts`);
   const posts = await res.json();
 
   // By returning { props: posts }, the Blog component

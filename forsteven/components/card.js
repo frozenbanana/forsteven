@@ -11,7 +11,7 @@ const Card = ({ title, body, coverImg, color }) => {
     <div>
       <div className="background-tint card-container shadowed">
         <h2 className="title"> {title} </h2>
-        <p>{body}</p>
+        <p>{body.slice(0,400)}...</p>
       </div>
       <style jsx>{`
         .card-container {
