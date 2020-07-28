@@ -3,29 +3,21 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer>
-      <div className="logo-container">
-        <h1>Steven Hansel</h1>
-      </div>
       <div className="nav-container">
         <ul>
-          <li>
+          <li className="shadowed-light">
             <Link href="/about">
               <a>About</a>
             </Link>
           </li>
-          <li>
+          <li className="shadowed-light">
             <Link href="/blog">
               <a>Blog</a>
             </Link>
           </li>
-          <li>
+          <li className="shadowed-light">
             <Link href="/projects">
               <a>Projects</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a>Contact</a>
             </Link>
           </li>
         </ul>
@@ -34,12 +26,12 @@ const Footer = () => {
         <ul>
           <li>
             <a href="https://github.com/ShinteiMai">
-              <img src="logos/github.png" />
+              <img src="/logos/github.png" />
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/steven-hansel-902516148/">
-              <img src="logos/linkedin.png" />
+              <img src="/logos/linkedin.png" />
             </a>
           </li>
         </ul>
@@ -69,6 +61,10 @@ const Footer = () => {
             margin-left: 0.5rem;
           }
 
+          ul {
+            padding: 0;
+          }
+
           footer a {
             display: flex;
             justify-content: center;
@@ -95,33 +91,22 @@ const Footer = () => {
             width: 40rem;
           }
 
-          .nav-container ul li a:link,
-          .nav-container ul li a:visited {
-            font-weight: 500;
-            padding: 6px 0;
-            border-bottom: none;
-          }
-
-          .nav-container ul li a:link:hover,
-          .nav-container ul li a:visited:hover {
-            border-bottom: 1px solid black;
-            font-weight: bold;
-          }
-
           .copyright-container {
             display: flex;
             align-items: center;
             justify-content: center;
             background: ##f1f0fe;
             width: 100%;
-            padding: 4rem;
+            margin: 2rem;
+            padding: 0rem 0rem 4rem 0rem;
             font-size: 1.2rem;
           }
 
           .contact-container {
             width: 100%;
             display: flex;
-            padding: 5rem;
+            margin: 2rem auto;
+            padding: 1rem;
             align-items: center;
             justify-content: center;
           }

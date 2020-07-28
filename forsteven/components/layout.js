@@ -36,10 +36,11 @@ const Layout = (props) => {
 
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
+          padding: 3rem 0.5rem 5rem 0.5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
+          border-bottom: 1px solid black;
         }
 
         a {

@@ -1,8 +1,8 @@
-const Card = ({ title, body, coverImg, color }) => {
+const Card = ({ title, body, coverImg, color, tags, link }) => {
   if (!coverImg) {
     coverImg = "http://placehold.it/420";
   }
-
+  console.log(`${process.env.API_URL}${coverImg.url}`);
   if (!title) {
     return "IT IS NOT WORKING!";
   }
@@ -12,10 +12,11 @@ const Card = ({ title, body, coverImg, color }) => {
       <div className="background-tint card-container shadowed">
         <h2 className="title"> {title} </h2>
         <p>{body.slice(0,400)}...</p>
+        { tags ? <ul>{tags.split(', ').map(tag => <li key={tag}>{tag}</li>)}</ul> : ""}
       </div>
       <style jsx>{`
         .card-container {
-          background-image: url(${coverImg});
+          background-image: url(${process.env.API_URL}${coverImg.url});
           flex-flow: row wrap:
           justify-content: center;
           align-items: center;
@@ -25,7 +26,27 @@ const Card = ({ title, body, coverImg, color }) => {
           width: 30rem;
           height: 40rem;
           border: 0.2rem solid black;
+          color: white;
         }
+        
+        .source-wrapper {
+          text-align: center;
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          padding: 0;
+          align-items: center;
+        }
+
+        li {
+          border: 0.2rem solid white;
+          margin: 0rem 1rem 1rem 0rem;
+          padding: 0.25rem;
+        }
+      
 
         .card-container:hover {
           cursor: pointer;

@@ -25,8 +25,7 @@ export default function Projects({ projects }) {
 // This function gets called at build time
 export async function getStaticProps() {
   // Call an external API endpoint to get posts
-  console.log(`${process.env.API_URL}/posts`);
-  const res = await fetch(`${process.env.API_URL}/posts`);
+  const res = await fetch(`${process.env.API_URL}/projects`);
   const projects = await res.json();
   console.log("we got posts", projects);
   return {
