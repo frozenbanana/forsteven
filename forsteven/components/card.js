@@ -1,6 +1,8 @@
-const Card = ({ title, body, coverImg, color, tags, link }) => {
+import Markdown from 'react-markdown';
+
+const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
   if (!coverImg) {
-    coverImg = "http://placehold.it/420";
+    coverImg = {url:"http://placehold.it/420"};
   }
   console.log(`${process.env.API_URL}${coverImg.url}`);
   if (!title) {
@@ -11,7 +13,7 @@ const Card = ({ title, body, coverImg, color, tags, link }) => {
     <div>
       <div className="background-tint card-container shadowed">
         <h2 className="title"> {title} </h2>
-        <p>{body.slice(0,400)}...</p>
+        <Markdown source={body.slice(0,300)} disallowedTypes={['image']} />
         { tags ? <ul>{tags.split(', ').map(tag => <li key={tag}>{tag}</li>)}</ul> : ""}
       </div>
       <style jsx>{`
@@ -26,7 +28,7 @@ const Card = ({ title, body, coverImg, color, tags, link }) => {
           width: 30rem;
           height: 40rem;
           border: 0.2rem solid black;
-          color: white;
+          color: rgba(${fontColor[0]}, ${fontColor[1]},  ${fontColor[2]}, ${fontColor[3]});
         }
         
         .source-wrapper {

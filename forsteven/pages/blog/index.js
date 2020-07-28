@@ -14,7 +14,7 @@ const Blog = ({ posts }) => {
             return (
             <Link href={`/blog/[slug]`} as={`/blog/${p.slug}`} key={p.id}>
               <a>
-                <Card {...p} color={[80, 230, 80, 0.4]} key={p.title}/>
+                <Card {...p} fontColor={[0,0,0,1]} color={[160, 229, 160, 0.8]} key={p.title}/>
               </a>
             </Link> );
           })}

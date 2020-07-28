@@ -26,12 +26,12 @@ const Footer = () => {
         <ul>
           <li>
             <a href="https://github.com/ShinteiMai">
-              <img src="/logos/github.png" />
+              <img src="/static/github.png" />
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/steven-hansel-902516148/">
-              <img src="/logos/linkedin.png" />
+              <img src="/static/linkedin.png" />
             </a>
           </li>
         </ul>

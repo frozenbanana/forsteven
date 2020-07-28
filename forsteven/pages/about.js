@@ -12,7 +12,7 @@ export default function About() {
           </div>
         </div>
         <div>
-          <img className="hero-item hero-image shadowed-static" src="profile.JPG" />
+          <img className="hero-item hero-image shadowed-static" src="/static/profile.JPG" />
         </div>
       </div>
       <div className="contact-container shadowed-static">
