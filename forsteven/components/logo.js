@@ -30,8 +30,6 @@ const Logo = () => {
                 letter-spacing: 2px;
                 margin: 0 auto;
             }
-
-
           `}
       </style>
     </div>
