@@ -1,8 +1,8 @@
-import Markdown from 'react-markdown';
+import Markdown from "react-markdown";
 
 const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
   if (!coverImg) {
-    coverImg = {url:"http://placehold.it/420"};
+    coverImg = { url: "http://placehold.it/420" };
   }
   if (!title) {
     return "IT IS NOT WORKING!";
@@ -10,53 +10,66 @@ const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
 
   return (
     <div>
-      <div className="background-tint card-container shadowed">
-        <h2 className="title"> {title} </h2>
-        <Markdown source={body.slice(0,300)} disallowedTypes={['image']} />
-        { tags ? <ul>{tags.split(', ').map(tag => <li key={tag}>{tag}</li>)}</ul> : ""}
+      <div className="card shadowed">
+        <div className="card__content">
+          <p className="content__date">Wednesday, 29 July 2020</p>
+          <h1 className="content__title">{title}</h1>
+          <p className="content__body">
+            <Markdown
+              source={body.slice(0, 300)}
+              disallowedTypes={["image"]}
+            />
+          </p>
+        </div>
+        <div className="card__image">
+          <img
+            src={`https://strapi.henrybergstrom.info/${coverImg.url}`}
+          ></img>
+        </div>
       </div>
       <style jsx>{`
-        .card-container {
-          background-image: url(${process.env.API_URL}${coverImg.url});
-          flex-flow: row wrap:
-          justify-content: center;
-          align-items: center;
-          max-width: 30rem;
-          margin: 1rem;
-          margin-bottom: 2rem;
-          width: 30rem;
-          height: 40rem;
-          border: 0.2rem solid black;
-          color: rgba(${fontColor[0]}, ${fontColor[1]},  ${fontColor[2]}, ${fontColor[3]});
-        }
-        
-        .source-wrapper {
-          text-align: center;
-        }
-
-        ul {
+        .card {
           display: flex;
-          flex-wrap: wrap;
-          list-style: none;
-          padding: 0;
-          align-items: center;
+          justify-content: center;
+          width: 60%;
+          margin: 5rem auto;
+          padding: 3rem;
+          margin-bottom: 1.5rem;
+          transition: all 0.4s;
         }
 
-        li {
-          border: 0.2rem solid white;
-          margin: 0rem 1rem 1rem 0rem;
-          padding: 0.25rem;
-        }
-      
-
-        .card-container:hover {
+        .card:hover {
           cursor: pointer;
-          opacity: .8;
+          opacity: 0.7;
         }
 
-        .background-tint {
-          background-color: rgba(${color[0]}, ${color[1]}, ${color[2]}, ${color[3]} );
-          background-blend-mode: multiply;
+        .card__content {
+          flex: 0 0 70%;
+        }
+
+        .content__title {
+          margin: 0;
+        }
+
+        .content__date {
+          font-size: 1.3rem;
+          margin-left: 0.5rem;
+          text-transform: uppercase;
+          opacity: 0.9;
+        }
+
+        .content__body {
+          width: 80%;
+          opacity: 0.9;
+        }
+
+        .card__image {
+          flex: 1;
+        }
+
+        .card__image img {
+          margin-top: 2rem;
+          max-width: 100%;
         }
       `}</style>
     </div>

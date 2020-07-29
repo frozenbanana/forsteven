@@ -1,6 +1,9 @@
-import Layout from "../../components/layout";
 import fetch from "isomorphic-fetch";
+
 import Markdown from "react-markdown";
+
+import Layout from "../../components/layout";
+import Article from '../../components/article';
 
 const Post = ({ post }) => {
   if (!post) {
@@ -11,22 +14,11 @@ const Post = ({ post }) => {
     );
   }
 
-  const coverImg = post.coverImg ? (
-    <img
-      className="cover-image"
-      src={`${process.env.API_URL}${post.coverImg.url}`}
-    />
-  ) : (
-    ""
-  );
-
   return (
     <Layout>
       <div className="focus-container shadowed-static">
-        {coverImg}
-        <h1>{post.title}</h1>
-        <Markdown
-          source={post.body}
+        <Article 
+          {...post} 
         />
       </div>
     </Layout>
@@ -35,7 +27,7 @@ const Post = ({ post }) => {
 
 export async function getServerSideProps(context) {
   const { slug } = context.query;
-  const res = await fetch(`${process.env.API_URL}/posts?slug=${slug}`);
+  const res = await fetch(`https://strapi.henrybergstrom.info/posts?slug=${slug}`);
   const post = await res.json();
   if (!post) {
     return {message: "Error retreiving data"}
