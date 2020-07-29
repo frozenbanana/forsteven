@@ -40,7 +40,6 @@ export async function getServerSideProps(context) {
   if (!post) {
     return {message: "Error retreiving data"}
   }
-  console.log("hello again server", post);
   return { props: { post: post[0] } };
 }
 
