@@ -4,7 +4,6 @@ const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
   if (!coverImg) {
     coverImg = {url:"http://placehold.it/420"};
   }
-  console.log(`${process.env.API_URL}${coverImg.url}`);
   if (!title) {
     return "IT IS NOT WORKING!";
   }
