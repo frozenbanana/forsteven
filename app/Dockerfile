@@ -1,6 +1,6 @@
 FROM node:14-alpine
 
-
+ENV PORT 3000
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -12,9 +12,9 @@ RUN npm install
 
 # Bundle app source
 COPY app /usr/src/app
-ENV PORT 80
-ENV NODE_ENV production
-EXPOSE 80
-
 RUN npm run build
+
+ENV NODE_ENV production
+ENV API_URL "https://strapi.henrybergstrom.info"
+EXPOSE 3000
 CMD [ "npm", "start" ]
