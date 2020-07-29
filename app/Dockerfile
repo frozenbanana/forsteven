@@ -7,6 +7,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
+CMD [ "ls" ]
 COPY package*.json /usr/src/app/
 RUN npm install
 
