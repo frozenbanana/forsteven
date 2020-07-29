@@ -48,11 +48,12 @@ const Navbar = () => {
           height: 48px;
           align-items: center;
           margin: 0;
+          padding: 0;
           font-size: 1.6rem;
         }
 
         ul li {
-          margin-left: 1rem;
+          margin: auto 1rem;
         }
       `}</style>
     </div>

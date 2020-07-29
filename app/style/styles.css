@@ -1,52 +1,103 @@
+/*
+    * CSS Variables
+*/
+:root {
+    --color-black: rgba(0, 0, 0, 0.8);
+    --color-black-hovered: rgba(0, 0, 0, 0.4);
+    --color-black-light: rgba(0, 0, 0, 0.5);
+    --color-black-light-hovered: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  min-height: 100vh;
+  padding: 3rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--color-black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .shadowed-static {
-    border: 1px solid;
-    padding: 2rem;
-    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .8);
+  border: 1px solid;
+  padding: 2rem;
+  box-shadow: 0.5rem 1rem var(--color-black);
 }
 
 .shadowed {
-    border: 1px solid;
-    padding: 2rem;
-    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .8);
+  border: 1px solid;
+  padding: 2rem;
+  box-shadow: 0.5rem 1rem var(--color-black);
 }
 
 .shadowed:hover {
-    cursor: pointer;
-    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .2);
+  cursor: pointer;
+  box-shadow: 0.5rem 1rem var(--color-black-hovered);
 }
 
 .shadowed-light {
-    border: 1px solid;
-    padding: 1rem;
-    box-shadow: 0.25rem 0.75rem rgba(0, 0, 0, .8);
+  border: 1px solid;
+  padding: 1rem;
+  box-shadow: 0.25rem 0.75rem var(--color-black-light);
 }
 
 .shadowed-light:hover {
-    cursor: pointer;
-    box-shadow: 0.25rem 0.75rem rgba(0, 0, 0, .2);
+  cursor: pointer;
+  box-shadow: 0.25rem 0.75rem var(--color-black-light-hovered);
 }
 
 .frame-container {
-    width: 66.6%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 66.6%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .focus-container {
-    width: 66.6%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  width: 66.6%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .cover-image {
-    max-width: 100%;
-    max-height: 20rem;
+  max-width: 100%;
+  max-height: 20rem;
 }
 
-@media only screen and (max-width: 768px) {
-    .frame-container {
-        flex-direction: column;
-    }
+.about-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0;
 }
+/* 
+    * Media Queries
+*/
+
+@media only screen and (max-width: 768px) {
+  .frame-container .contact-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-container {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+  }
+
+  .focus-container {
+      width: 90%;
+  }
+}
+
+/*
+    * Animations
+*/

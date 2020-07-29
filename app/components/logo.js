@@ -13,6 +13,7 @@ const Logo = () => {
                 color: #204D76;
                 width: 20rem;
                 cursor: pointer;
+                margin: 0.5rem 1rem;
             }
 
             div h1 {

@@ -5,42 +5,27 @@ export default function About() {
   return (
     <Layout>
       <div className="about-container">
-        <div className="hero-item shadowed-static">
-          <div>
+        <img className="hero-item hero-image shadowed-static" src="/static/profile.JPG" />
+        <div className="content-a hero-item shadowed-static">
             <h1 className="hero-item__title">I am a great computer man.</h1>
             <p className="hero-item__subtitle">But I am also just a person.</p>
-          </div>
         </div>
-        <div>
-          <img className="hero-item hero-image shadowed-static" src="/static/profile.JPG" />
+        <div className="hero-item shadowed-static">
+          <p>
+            Have any projects in mind? Say hello at
+          </p>
+          <h3>
+            <strong>steven@email.com</strong>
+          </h3>
         </div>
       </div>
-      <div className="contact-container shadowed-static">
-        <p>
-          Have any projects in mind? Say hello at
-        </p>
-        <h3>
-          <strong>steven@email.com</strong>
-        </h3>
-      </div>
+
 
       <style jsx>{`
-        .about-container {
+        .content-a {
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            width: 100%:
-            justify-content: center;
-            margin-bottom: 0;
-            margin-top: 5rem;
-        }
-
-        .contact-container {
-            display: flex;
-            width: 100%:
             justify-content: center;
             align-items: center;
-            margin: 5rem;
             flex-direction: column;
         }
 
@@ -50,24 +35,29 @@ export default function About() {
         }
 
         .hero-item {
-            margin: auto 6rem;
+            margin: 2rem 6rem;
+            text-align: center;
+            max-height: 25rem;
         }
 
-        .hero-item__title {
+        .hero-item__subtitle {
+            display: inline-block;
             overflow: hidden; /* Ensures the content is not revealed until the animation */
             border-right: .15em solid black; /* The typwriter cursor */
             white-space: nowrap; /* Keeps the content on a single line */
             margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-            letter-spacing: 1px; /* Adjust as needed */
+            // letter-spacing: 1px; /* Adjust as needed */
             animation: 
               typing 3.5s steps(40, end),
               blink-caret .75s step-end infinite;
           }
 
-          .hero-item__subtitle {
-              opacity: .8;
+          @media only screen and (max-width: 650px) {
+            .hero-item__title {
+                font-size: 1.6rem;
+            }
           }
-          
+
           @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -77,6 +67,8 @@ export default function About() {
             from, to { border-color: transparent }
             50% { border-color: black; }
           }
+
+
         `}</style>
     </Layout>
   );

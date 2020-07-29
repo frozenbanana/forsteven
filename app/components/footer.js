@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer>
-      <div className="nav-container">
+      {/* <div className="nav-container">
         <ul>
           <li className="shadowed-light">
             <Link href="/about">
@@ -21,7 +21,7 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-      </div>
+      </div> */}
       <div className="contact-container">
         <ul>
           <li>
@@ -55,6 +55,7 @@ const Footer = () => {
             flex-direction: column;
             text-align: center;
             padding: 3rem 0;
+            position: relative;
           }
 
           footer img {
@@ -77,19 +78,19 @@ const Footer = () => {
             line-height: 1.8;
           }
 
-          .nav-container {
-            display: flex;
-            justify-content: center;
-          }
+          // .nav-container {
+          //   display: flex;
+          //   justify-content: center;
+          // }
 
-          .nav-container ul {
-            display: flex;
-            list-style: none;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            width: 40rem;
-          }
+          // .nav-container ul {
+          //   display: flex;
+          //   list-style: none;
+          //   flex-direction: row;
+          //   justify-content: space-around;
+          //   align-items: center;
+          //   width: 40rem;
+          // }
 
           .copyright-container {
             display: flex;

@@ -8,12 +8,15 @@ const Layout = (props) => {
     <div>
       <Head>
         <title>For Steven Personal Website</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
         <link href="../style/fonts.css" rel="stylesheet" /> 
       </Head>
-      <Navbar />
-      <div className="container">{props.children}</div>
-      <Footer />
+      <div>
+        <Navbar />
+        <div className="container">{props.children}</div>
+        <Footer />
+      </div>
       <style jsx global>{`
         html {
           font-size: 62.5%;
@@ -27,26 +30,13 @@ const Layout = (props) => {
         }
 
         body {
-          font-size: 1.6rem;
+         font-size: 1.6rem;
+         width: 100%;
         }
 
         * {
           box-sizing: border-box;
-        }
-
-        .container {
-          min-height: 100vh;
-          padding: 3rem 0.5rem 5rem 0.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          border-bottom: 1px solid black;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-          }    
+        } 
       `}</style>
     </div>
   );
