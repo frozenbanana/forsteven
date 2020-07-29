@@ -3,25 +3,6 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer>
-      {/* <div className="nav-container">
-        <ul>
-          <li className="shadowed-light">
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </li>
-          <li className="shadowed-light">
-            <Link href="/blog">
-              <a>Blog</a>
-            </Link>
-          </li>
-          <li className="shadowed-light">
-            <Link href="/projects">
-              <a>Projects</a>
-            </Link>
-          </li>
-        </ul>
-      </div> */}
       <div className="contact-container">
         <ul>
           <li>

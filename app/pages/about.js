@@ -8,7 +8,9 @@ export default function About() {
         <img className="hero-item hero-image shadowed-static" src="/static/profile.JPG" />
         <div className="content-a hero-item shadowed-static">
             <h1 className="hero-item__title">I am a great computer man.</h1>
-            <p className="hero-item__subtitle">But I am also just a person.</p>
+            <p className="hero-item__subtitle">
+                But I am also just a person.
+            </p>
         </div>
         <div className="hero-item shadowed-static">
           <p>
@@ -25,8 +27,8 @@ export default function About() {
         .content-a {
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
         }
 
         .hero-image {   
@@ -40,21 +42,21 @@ export default function About() {
             max-height: 25rem;
         }
 
-        .hero-item__subtitle {
-            display: inline-block;
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid black; /* The typwriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        .hero-item__subtitle{
+            font-size: 1.6rem;
+            // overflow: hidden; /* Ensures the content is not revealed until the animation */
+            // border-right: .15em solid black; /* The typwriter cursor */
+            // white-space: nowrap; /* Keeps the content on a single line */
+            // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
             // letter-spacing: 1px; /* Adjust as needed */
-            animation: 
-              typing 3.5s steps(40, end),
-              blink-caret .75s step-end infinite;
+            // animation: 
+            //   typing 3.5s steps(40, end),
+            //   blink-caret .75s step-end infinite;
           }
 
           @media only screen and (max-width: 650px) {
             .hero-item__title {
-                font-size: 1.6rem;
+                font-size: 2.4rem;
             }
           }
 

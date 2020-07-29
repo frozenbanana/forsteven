@@ -2,6 +2,8 @@ import Link from "next/link";
 import Layout from "../../components/layout";
 import Card from "../../components/card";
 
+import Markdown from 'react-markdown'
+
 const Blog = ({ posts }) => {
   return (
     <Layout>
@@ -19,6 +21,25 @@ const Blog = ({ posts }) => {
             </Link> );
           })}
         </div>
+
+        {/* <div className="frame-container-2">
+          {posts.map(p => {
+            return (
+              <Link href={`/blog/[slug]`} as={`/blog/${p.slug}`} key={p.id}>
+                  <div class="card">
+                    <div class="card__content">
+                      <p>Wednesday, 29th July 2020</p>
+                      <h1>{p.title}</h1>
+                      <Markdown source={p.body.slice(0,200)} disallowedTypes={['image']} />
+                    </div>
+                    <div className="card__image">
+                      <img src="https://www.improgrammer.net/wp-content/uploads/2016/09/Java-vs-Javascript.jpg" alt="meme" />
+                    </div>
+                  </div>
+              </Link>
+            )
+          })}
+        </div> */}
     </Layout>
   );
 };
