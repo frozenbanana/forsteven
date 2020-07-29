@@ -78,6 +78,7 @@ a {
     margin-bottom: 0;
 }
 
+
 .card {
     width: 60%;
     display: flex;
@@ -115,13 +116,6 @@ a {
     opacity: .9;
 }
 
-.card__image {
-
-}
-
-.card__image img {
-
-}
 /* 
     * Media Queries
 */

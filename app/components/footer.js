@@ -1,31 +1,21 @@
-import Link from "next/link";
-
 const Footer = () => {
   return (
     <footer>
       <div className="contact-container">
-        <ul>
+        <ul className="shadowed-light">
           <li>
-            <a href="https://github.com/ShinteiMai">
+            <a href="https://github.com/frozenbanana">
               <img src="/static/github.png" />
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/steven-hansel-902516148/">
+            <a href="https://www.linkedin.com/in/henry-bergstr%C3%B6m-08080415b/">
               <img src="/static/linkedin.png" />
             </a>
           </li>
         </ul>
       </div>
-      <div className="copyright-container">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          &copy; Powered by Dev Town Explosion. All rights reserved.
-        </a>
-      </div>
+      
       <style jsx>
         {`
           footer {
@@ -43,10 +33,6 @@ const Footer = () => {
             margin-left: 0.5rem;
           }
 
-          ul {
-            padding: 0;
-          }
-
           footer a {
             display: flex;
             justify-content: center;
@@ -57,31 +43,6 @@ const Footer = () => {
             font-family: "Dancing Script", sans-serif;
             font-weight: 400;
             line-height: 1.8;
-          }
-
-          // .nav-container {
-          //   display: flex;
-          //   justify-content: center;
-          // }
-
-          // .nav-container ul {
-          //   display: flex;
-          //   list-style: none;
-          //   flex-direction: row;
-          //   justify-content: space-around;
-          //   align-items: center;
-          //   width: 40rem;
-          // }
-
-          .copyright-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: ##f1f0fe;
-            width: 100%;
-            margin: 2rem;
-            padding: 0rem 0rem 4rem 0rem;
-            font-size: 1.2rem;
           }
 
           .contact-container {
@@ -95,12 +56,13 @@ const Footer = () => {
 
           .contact-container ul {
             list-style: none;
-            margin: 0 auto;
-            padding-left: 0;
+            padding: 2rem 3rem;
+            margin: 1rem;
           }
 
           .contact-container li {
             display: inline-block;
+            margin: 1rem;
           }
 
           .contact-container li:not(:last-child) {

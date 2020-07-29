@@ -5,19 +5,19 @@ export default function About() {
   return (
     <Layout>
       <div className="about-container">
-        <img className="hero-item hero-image shadowed-static" src="/static/profile.JPG" />
+        <img className="hero-item hero-image shadowed-static" src="/static/profile.gif" />
         <div className="content-a hero-item shadowed-static">
-            <h1 className="hero-item__title">I am a great computer man.</h1>
+            <h1 className="hero-item__title">i am a great computer man.</h1>
             <p className="hero-item__subtitle">
-                But I am also just a person.
+                but I am also just a person.
             </p>
         </div>
         <div className="hero-item shadowed-static">
           <p>
-            Have any projects in mind? Say hello at
+            have any projects in mind? say hello at
           </p>
           <h3>
-            <strong>steven@email.com</strong>
+            <strong>henrybergstrom@pm.me</strong>
           </h3>
         </div>
       </div>
