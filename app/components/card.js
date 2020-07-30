@@ -7,17 +7,17 @@ const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
   if (!title) {
     return "IT IS NOT WORKING!";
   }
-
+  console.log(`setting ${process.env.NEXT_PUBLIC_API_URL}${coverImg.url}`);
   return (
     <div>
       <div className="background-tint card-container shadowed">
-        <h2 className="title"> {title} </h2>
+        <h2> {title} </h2>
         <Markdown source={body.slice(0,300)} disallowedTypes={['image']} />
         { tags ? <ul>{tags.split(', ').map(tag => <li key={tag}>{tag}</li>)}</ul> : ""}
       </div>
       <style jsx>{`
         .card-container {
-          background-image: url(${process.env.API_URL}${coverImg.url});
+          background-image: url('${process.env.NEXT_PUBLIC_API_URL}${coverImg.url}');
           flex-flow: row wrap:
           justify-content: center;
           align-items: center;

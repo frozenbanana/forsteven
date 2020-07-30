@@ -15,6 +15,6 @@ COPY app /usr/src/app
 RUN npm run build
 
 ENV NODE_ENV production
-ENV API_URL "https://strapi.henrybergstrom.info"
+ENV NEXT_PUBLIC_API_URL "https://strapi.henrybergstrom.info"
 EXPOSE 3000
 CMD [ "npm", "start" ]

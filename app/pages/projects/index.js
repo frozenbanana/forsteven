@@ -3,11 +3,15 @@ import Layout from "../../components/layout";
 import Card from "../../components/card";
 
 export default function Projects({ projects }) {
-  projects = projects.slice(0, 5);
+  // const router = useRouter()
+  // if (!router.isFallback && projects.length <= 0) {
+  //   // return <ErrorPage statusCode={404} />
+  //   return "ERROR";
+  // }
   return (
     <Layout>
         <div>
-          <h1 className="shadowed-static">My Projects</h1>
+          <h1 className="shadowed-static">my projects</h1>
         </div>
         <div className="frame-container">
           {projects.map((p) => {
@@ -21,14 +25,14 @@ export default function Projects({ projects }) {
   );
 }
 
-// This function gets called at build time
-export async function getServerSideProps() {
-  // Call an external API endpoint to get posts
-  const res = await fetch(`${process.env.API_URL}/projects`);
+
+export async function getStaticProps() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
   const projects = await res.json();
+  
   return {
     props: {
-      projects,
+      projects
     },
-  };
+  }
 }

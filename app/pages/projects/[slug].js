@@ -1,5 +1,4 @@
 import Layout from "../../components/layout";
-import fetch from "isomorphic-fetch";
 import Markdown from "react-markdown";
 
 const Project = ({ project }) => {
@@ -14,7 +13,7 @@ const Project = ({ project }) => {
   const coverImg = project.coverImg ? (
     <img
       className="cover-image"
-      src={`${process.env.API_URL}${project.coverImg.url}`}
+      src={`${process.env.NEXT_PUBLIC_API_URL}${project.coverImg.url}`}
     />
   ) : (
     ""
@@ -37,6 +36,10 @@ const Project = ({ project }) => {
           margin: 1rem auto;
           text-align: center;
         }
+        
+        img {
+          max-width: 100%;
+        }
 
         a {
           background-color: lightgreen;
@@ -47,11 +50,26 @@ const Project = ({ project }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query;
-  const res = await fetch(`${process.env.API_URL}/projects?slug=${slug}`);
-  const project = await res.json();
-  return { props: { project: project[0] } };
+
+export async function getStaticProps({ params }) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects?slug=${params.slug}`);
+  const projects = await res.json();
+  
+  return {
+    props: {
+      project: projects[0] || {}
+    },
+  }
 }
+
+export async function getStaticPaths() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
+  const projects = await res.json();
+
+  return {
+    paths: projects?.map((projects) => `/projects/${projects.slug}`) || [],
+    fallback: true,
+  }
+} 
 
 export default Project;
