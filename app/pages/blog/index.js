@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Layout from "../../components/layout";
 import Card from "../../components/card";
-
-import Markdown from 'react-markdown'
+import {API_URL} from "../../config";
 
 const Blog = ({ posts }) => {
   return (
@@ -25,8 +24,7 @@ const Blog = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  console.log('Trying to get props from ' + `${process.env.NEXT_PUBLIC_API_URL}/posts`);
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`);
+  const res = await fetch(`${API_URL}/posts`);
   const posts = await res.json();
   
   return {

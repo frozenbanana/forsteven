@@ -1,4 +1,5 @@
 import Markdown from 'react-markdown';
+import {API_URL} from '../config';
 
 const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
   if (!coverImg) {
@@ -7,7 +8,6 @@ const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
   if (!title) {
     return "IT IS NOT WORKING!";
   }
-  console.log(`setting ${process.env.NEXT_PUBLIC_API_URL}${coverImg.url}`);
   return (
     <div>
       <div className="background-tint card-container shadowed">
@@ -17,7 +17,7 @@ const Card = ({ title, body, coverImg, fontColor, color, tags, link }) => {
       </div>
       <style jsx>{`
         .card-container {
-          background-image: url('${process.env.NEXT_PUBLIC_API_URL}${coverImg.url}');
+          background-image: url('${API_URL}${coverImg.url}');
           flex-flow: row wrap:
           justify-content: center;
           align-items: center;

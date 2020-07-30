@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Layout from "../../components/layout";
 import Card from "../../components/card";
+import {API_URL} from "../../config";
 
 export default function Projects({ projects }) {
   // const router = useRouter()
@@ -27,7 +28,7 @@ export default function Projects({ projects }) {
 
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
+  const res = await fetch(`${API_URL}/projects`);
   const projects = await res.json();
   
   return {

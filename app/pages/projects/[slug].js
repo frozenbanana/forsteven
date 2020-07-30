@@ -1,5 +1,6 @@
 import Layout from "../../components/layout";
 import Markdown from "react-markdown";
+import {API_URL} from "../../config";
 
 const Project = ({ project }) => {
   if (!project) {
@@ -13,7 +14,7 @@ const Project = ({ project }) => {
   const coverImg = project.coverImg ? (
     <img
       className="cover-image"
-      src={`${process.env.NEXT_PUBLIC_API_URL}${project.coverImg.url}`}
+      src={`${API_URL}${project.coverImg.url}`}
     />
   ) : (
     ""
@@ -52,7 +53,7 @@ const Project = ({ project }) => {
 
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects?slug=${params.slug}`);
+  const res = await fetch(`${API_URL}/projects?slug=${params.slug}`);
   const projects = await res.json();
   
   return {
@@ -63,7 +64,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
+  const res = await fetch(`${API_URL}/projects`);
   const projects = await res.json();
 
   return {
