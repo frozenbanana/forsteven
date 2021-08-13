@@ -11,7 +11,7 @@
     "dotenv": "^8.2.0",
     "isomorphic-fetch": "^2.2.1",
     "markdown-it": "^11.0.0",
-    "next": "^9.5.0",
+    "next": "^11.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "^4.3.1"
